@@ -1,0 +1,15 @@
+* {box-sizing: border-box;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+h1 {font-family: 'Cherry Swash', cursive;
+}
+
+fieldset {font-family: 'Rokkitt', serif;
+}
+
