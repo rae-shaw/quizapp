@@ -4,6 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="main.css">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="datastore.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 	<title>Sky Candy Rigging and Safety Quiz</title>
 	<link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Rokkitt&display=swap" rel="stylesheet">
 </head>
@@ -28,224 +34,12 @@
         <h1>Ready test your knowledge of rigging at Sky Candy?</h1>
         <button type="button" class="startButton">Let's do it!</button>
       </div>
+  <div class= "questionForm"> </div>
+
 	
-		<form role="form" class="rigging-quiz">
 
-      	<fieldset>
-    		
-  		<h2>What is the first thing you should do when you change an apparatus?</h2>
-  		<div>
-    		<input type="radio" id="answer1-1">
-    		<label>Untying the wraps, starting with the locking wraps.
-			</label>
-
-    		<input type="radio" id="answer1-2">
-    		<label>Give the line you’re working with a tug to make sure you’re on the correct line.</label>
-
-    		<input type="radio" id="answer1-3">
-    		<label>Tell everyone what you’re doing.</label>
-
-    		<input type="radio" id="answer1-4">
-    		<label>Do the rig dance.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>For Sky Candy's pinrail system, how many regular wraps do you tie?</h2>
-  		<div>
-    		<input type="radio" id="answer2-1">
-    		<label>3</label>
-
-    		<input type="radio" id="answer2-2">
-    		<label>2</label>
-
-    		<input type="radio" id="answer2-3">
-    		<label>1</label>
-
-    		<input type="radio" id="answer2-4">
-    		<label>4</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>For Sky Candy's pinrail system, how many locked wraps do you tie?</h2>
-  		<div>
-    		<input type="radio" id="answer3-1">
-    		<label>3</label>
-
-    		<input type="radio" id="answer3-2">
-    		<label>2</label>
-
-    		<input type="radio" id="answer3-3">
-    		<label>1</label>
-
-    		<input type="radio" id="answer3-4">
-    		<label>all</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>Why is it important that everyone tie off the pinrails with the same number and type of wraps?</h2>
-  		<div>
-    		<input type="radio" id="answer4-1">
-    		<label>It looks nicer.</label>
-
-    		<input type="radio" id="answer4-2">
-    		<label>If an aerial rescue needs to happen, the person doing the rescue will automatically know the number of wraps.</label>
-
-    		<input type="radio" id="answer4-3">
-    		<label>It doesn’t matter.</label>
-
-    		<input type="radio" id="answer4-4">
-    		<label>None of the above.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>What are common aerial rescue situations?</h2>
-  		<div>
-    		<input type="radio" id="answer5-1">
-    		<label>An aerialist getting tangled in the silks or stuck in the trapeze ropes.</label>
-
-    		<input type="radio" id="answer5-2">
-    		<label>Clothing getting caught.</label>
-
-    		<input type="radio" id="answer5-3">
-    		<label>Fear of heights.</label>
-
-    		<input type="radio" id="answer5-4">
-    		<label>All of the above.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>Why do we tie exactly two regular wraps on the pinrail (before the locking ones)?</h2>
-  		<div>
-    		<input type="radio" id="answer6-1">
-    		<label>It takes less time than doing 4 locking wraps.</label>
-
-    		<input type="radio" id="answer6-2">
-    		<label>It looks nicer.</label>
-
-    		<input type="radio" id="answer6-3">
-    		<label>It helps with aerial rescue.</label>
-
-    		<input type="radio" id="answer6-4">
-    		<label>None of the above.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>What are the triangles used for in rigging?</h2>
-  		<div>
-    		<input type="radio" id="answer7-1">
-    		<label>Single point trapeze</label>
-
-    		<input type="radio" id="answer7-2">
-    		<label>Double point lyra</label>
-
-    		<input type="radio" id="answer7-3">
-    		<label>Both of the above</label>
-
-    		<input type="radio" id="answer7-4">
-    		<label>None of the above</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>What should you consider when storing silks, ropes, and hammocks?</h2>
-  		<div>
-    		<input type="radio" id="answer8-1">
-    		<label>Daisy chain when not in use.</label>
-
-    		<input type="radio" id="answer8-2">
-    		<label>Make sure they are not touching the floor.</label>
-
-    		<input type="radio" id="answer8-3">
-    		<label>Hang them by the rescue 8.</label>
-
-    		<input type="radio" id="answer8-4">
-    		<label>All of the above.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>What should you do if you’re not 100% sure how to rig an apparatus?</h2>
-  		<div>
-    		<input type="radio" id="answer9-1">
-    		<label>Rig with your best guess solution, it’s probably fine.</label>
-
-    		<input type="radio" id="answer9-2">
-    		<label>Check-in with another Sky Candy rig trained employee.</label>
-
-    		<input type="radio" id="answer9-3">
-    		<label>Refer to the Staff Rigging Training powerpoint.</label>
-
-    		<input type="radio" id="answer9-4">
-    		<label>Both/either B &C.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-  	<fieldset>
-  		<h2>What should you do if you’re not 100% sure how to rig an apparatus?</h2>
-  		<div>
-    		<input type="radio" id="answer9-1">
-    		<label>So that it “screws down” (top down).</label>
-
-    		<input type="radio" id="answer9-2">
-    		<label>So that it “screws up” (top up).</label>
-
-    		<input type="radio" id="answer9-3">
-    		<label>Either.</label>
-
-    		<input type="radio" id="answer9-4">
-    		<label>None of the above.</label>
- 		 </div>
-  		<div>
-    	<button type="submit">Next</button>
-  		</div>
-  	</fieldset>
-
-
-	</form>
-
- 	<div class="quizEnd">
-        <h1>Your results!</h1>
-        <p>
-        	You got x/10. If you scored 7/10 or less, please study your rigging training materials and try again!
-        </p>
-        <button type="button" class="restartButton">Redo please!</button>
-      </div>
 	</main>
 
 
-	<script type="text/javascript" href="index.html"></script>
 </body>
 </html>
