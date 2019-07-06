@@ -43,8 +43,20 @@ const STORE = [
 
 	{
 		question: 'Which way should you rig a carabiner?',
-		answers: ['So that it “screws down” (top down).', 'So that it “screws up” (top up).', 'Either.', 'Both/either B &C.'],
-		correctAnswer: 'None of the above.'
+		answers: ['So that it “screws down” (top down).', 'So that it “screws up” (top up).', 'Either.', 'None of the above.'],
+		correctAnswer: 'So that it “screws down” (top down).'
+	},
+
+	{
+		question: 'What should you consider when storing silks, ropes, and hammocks?',
+		answers: ['Daisy chain when not in use.', 'Make sure they are not touching the floor.', 'Hang them by the rescue 8.', 'All of the above.'],
+		correctAnswer: 'All of the above.'
+	},
+
+	{
+		question: 'What should you do if you’re not 100% sure how to rig an apparatus?',
+		answers: ['Rig with your best guess solution, it’s probably fine.', 'Check-in with another Sky Candy rig trained employee.', 'Refer to the Staff Rigging Training powerpoint.', 'Both/either B &C.'],
+		correctAnswer: 'Both/either B &C.'
 	},
 
 
