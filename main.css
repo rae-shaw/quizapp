@@ -1,15 +1,78 @@
 * {box-sizing: border-box;
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	background-image: url("background1.jpg");
+	color: #BDA52E;
+	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+
+}
+
 header {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content:space-around;
 }
 
-h1 {font-family: 'Cherry Swash', cursive;
+.logo {
+	width: 50%;
 }
 
-fieldset {font-family: 'Rokkitt', serif;
+.right-corner{
+	width: 20%;
 }
 
+.left-corner{
+	width: 50%;
+}
+
+main {
+	background: rgba(0, 0, 0, 0.8);
+	border: 2px solid black;
+	flex-direction: row;
+	width: 50%;
+	min-height: 300px;
+	align-self: center;
+	align-content: center;
+
+}
+
+h1, h2, h3 {
+	font-family: 'Cherry Swash', cursive;
+	color: #BDA52E;
+}
+
+fieldset {
+	display: flex;
+	font-family: 'Rokkitt', serif;
+	border: none;
+}
+
+
+ul {
+	list-style: none;
+
+}
+
+
+.startButton, .submit, .nextButton, .restartButton {
+	font-family: 'Rokkitt', serif;
+	color: white;
+	background-color: black;
+	border: 1px solid #64CCD4;
+	  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+
+.startButton:hover, .submit:hover, .nextButton:hover, .restartButton:hover {
+  background-color: white; 
+  color: black;
+
+.right-corner {font-family: 'Rokkitt', serif; 
+}
