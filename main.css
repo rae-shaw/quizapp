@@ -1,4 +1,6 @@
-* {box-sizing: border-box;
+* {box-sizing: 
+	border-box;
+
 }
 
 body {
@@ -24,22 +26,22 @@ header {
 	width: 50%;
 }
 
-.right-corner{
-	width: 20%;
+.score-question-counter{
+	align-content: flex-end;
 }
 
 .left-corner{
-	width: 50%;
+	width: 40%;
 }
 
 main {
 	background: rgba(0, 0, 0, 0.8);
 	border: 2px solid black;
-	flex-direction: row;
-	width: 50%;
+	width: 70%;
 	min-height: 300px;
 	align-self: center;
 	align-content: center;
+	display: flex;
 
 }
 
@@ -50,8 +52,16 @@ h1, h2, h3 {
 
 fieldset {
 	display: flex;
-	font-family: 'Rokkitt', serif;
 	border: none;
+}
+
+.questionForm {
+	font-family: 'Rokkitt', serif;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	min-width: 229px;
+
 }
 
 
@@ -60,12 +70,22 @@ ul {
 
 }
 
+.quizStart {
+	text-align: center;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+}
+
 
 .startButton, .submit, .nextButton, .restartButton {
+	flex-direction: flex-end;
 	font-family: 'Rokkitt', serif;
 	color: white;
 	background-color: black;
 	border: 1px solid #64CCD4;
+	display: block;
+  	width: 100%;
 	  -webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
 }
@@ -75,4 +95,11 @@ ul {
   color: black;
 
 .right-corner {font-family: 'Rokkitt', serif; 
+}
+
+@media screen and (min-width 1150px) {
+	main{
+		max-width: 730px;	
+		}
+	}
 }

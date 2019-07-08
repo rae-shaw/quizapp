@@ -4,14 +4,7 @@ let questionNumber=0;
 
 let score=0;
 
-
-/*function renderLandingPage () {
-//this function will be resposible for rendering the landing page in the DOM
-
-	console.log('`renderLandingPage` ran');
-}*/
-
-
+//this function will be responsible for when the user clicks the "I'm ready" button to start the quiz
 function handleClickToStart (){
 
 	$('.quizStart').on('click', '.startButton', function(event) {
@@ -21,11 +14,9 @@ function handleClickToStart (){
 		renderQuestion();
 
 		console.log('Clicked start button!');
-		/*$('.questionForm').css('display', 'block');
-    	$('.questionNumber').text(1);*/
+
 
 		});
-	//this function will be responsible for when the user clicks the "I'm ready" button to start the quiz
 }
 
 
@@ -64,7 +55,7 @@ function generateQuestion (){
 }
 
 
-
+//this function is responsible for rendering the questions
 function renderQuestion(){
 
 	console.log('render question ran!');
@@ -73,6 +64,7 @@ function renderQuestion(){
 
 }
 
+//this function is responsible for changing the questions number
 function changeQuestionNumber(){
 		questionNumber ++;
 
@@ -81,10 +73,12 @@ function changeQuestionNumber(){
 	
 }
 
+//this function is reponsible for incrementing the score
 function changeScore(){
 	score ++;
 }
 
+//this question is responsible for what happens when a user selects an answer and clicks "next"
 function selectAnswer(){
 	$('main').on('click', '.submit', function(event){
 		event.preventDefault();
@@ -107,15 +101,16 @@ function selectAnswer(){
 		}
 
 		console.log('select answer ran!');
-		// $('.questionForm').html(`<button type=button class="nextButton">Next</button></div>`);
 	});
 
 }
 
+//This function is respobsible for updating the displayed score text
 function upDateScoreText(){
 	changeScore();
 	$('.score').text(score);
 }
+
 
 function ifAnswerIsCorrect(){
 	$('.questionForm').html(`<div class="correctFeedback"><p>You got it right!</p><button type=button class="nextButton">Next</button></div>`);
@@ -123,24 +118,15 @@ function ifAnswerIsCorrect(){
 	upDateScoreText();
 }
 
+
 function ifAnswerIsIncorrect(){
 	let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
 
-	$('.questionForm').html(`<div class="correctFeedback"><p><b>Whomp whomp... That's not quite right.</b><br>The correct answer is: <br> <span><i>"${correctAnswer}"</i></span></p><button type=button class="nextButton">Next</button></div>`);
+	$('.questionForm').html(`<div class="correctFeedback"><p><b>Whomp whomp... Not quite.</b><br>The correct answer is: <br> <span><i>"${correctAnswer}"</i></span></p><button type=button class="nextButton">Next</button></div>`);
 	console.log('if answer incorrect ran!')
 
 }
 
-/*function answerCorrectFeedback() {
-	// displays feedback the user sees if they answer correctly
-	ifAnswerIsCorrect();
-	upDateScore();
-}
-
-function answerIncorrectFeedback(){
-	//displays feedback the user sees if they answer incorrectly
-	ifAnswerIsIncorrect();
-}*/
 
 function nextQuestion (){
 	$('main').on('click','.nextButton', function(event) {
@@ -187,11 +173,10 @@ function createQuiz () {
   handleClickToStart();
   console.log('create quiz ran!')
   nextQuestion();
-  //selectAnswer();
- // NextQuestion();
+
 }
 
 $(createQuiz);
 
-//console.log (STORE[0]);
+
 
