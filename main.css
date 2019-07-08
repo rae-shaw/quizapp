@@ -5,6 +5,7 @@
 
 body {
 	display: flex;
+	height: 100vh;
 	flex-direction: column;
 	background-image: url("background1.jpg");
 	color: #BDA52E;
@@ -28,6 +29,7 @@ header {
 
 .score-question-counter{
 	align-content: flex-end;
+	font-family: 'Rokkitt', serif; 
 }
 
 .left-corner{
@@ -38,8 +40,9 @@ main {
 	background: rgba(0, 0, 0, 0.8);
 	border: 2px solid black;
 	width: 70%;
-	min-height: 300px;
+	padding: 2rem 3rem;
 	align-self: center;
+	flex-direction:column;
 	align-content: center;
 	display: flex;
 
@@ -60,7 +63,6 @@ fieldset {
 	justify-content: center;
 	display: flex;
 	align-items: center;
-	min-width: 229px;
 
 }
 
@@ -94,8 +96,6 @@ ul {
   background-color: white; 
   color: black;
 
-.right-corner {font-family: 'Rokkitt', serif; 
-}
 
 @media screen and (min-width 1150px) {
 	main{

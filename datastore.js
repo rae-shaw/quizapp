@@ -1,6 +1,6 @@
 const STORE = [
 	{
-		question: 'What is the first thing you should do when you change an apparatus',
+		question: 'What is the first thing you should do when you change an apparatus?',
 		answers: ['Untying the wraps, starting with the locking wraps.', 'Give the line you’re working with a tug to make sure you’re on the correct line.', 'Tell everyone what you’re doing.', 'Do the rig dance.'], 
 		correctAnswer: 'Give the line you’re working with a tug to make sure you’re on the correct line.'
 
