@@ -18,27 +18,29 @@ function generateQuestion (){
 	if (questionNumber < STORE.length) {
 	return `<div class="question-${questionNumber}">
     	<h2>${STORE[questionNumber].question}</h2>
-    		<form>
+    		<form id='myform'>
     			<fieldset>
     				<label class="answerOption">
-    					<input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" required>
+    					<input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" class="checkAnswer" required>
     					<span>${STORE[questionNumber].answers[0]}</span>
     				</label>
     				<label class="answerOption">
-    					<input type="radio" value="${STORE[questionNumber].answers[1]}" name="answer" required>
+    					<input type="radio" value="${STORE[questionNumber].answers[1]}" name="answer" class="checkAnswer" required>
     					<span>${STORE[questionNumber].answers[1]}</span>
     				</label>
     				<label class="answerOption">
-    					<input type="radio" value="${STORE[questionNumber].answers[2]}" name="answer" required>
+    					<input type="radio" value="${STORE[questionNumber].answers[2]}" name="answer" class="checkAnswer" required>
     					<span>${STORE[questionNumber].answers[2]}</span>
     				</label>
     				<label class="answerOption">
-    	<input type="radio" value="${STORE[questionNumber].answers[3]}" name="answer" required>
-    	<span>${STORE[questionNumber].answers[3]}</span>
-    	</label>
-    	<button type="submit" class="submit">Submit</button>
-    	</fieldset>
-    	</form>
+    				<input type="radio" value="${STORE[questionNumber].answers[3]}" name="answer" class="checkAnswer" required>
+    				<span>${STORE[questionNumber].answers[3]}</span>
+    				</label>
+    				<button type="submit" class="submit">Submit</button>
+    			</fieldset>
+    			<p class='container'>
+    			</p>
+    		</form>
     </div>`;
 }else{
 	renderResults();
@@ -63,26 +65,34 @@ function changeScore(){
 	score++;
 }
 
-//this question is responsible for what happens when a user selects an answer and clicks "next"
+//this question is responsible for what happens when a user selects an answer (or fails to check an answer) and clicks "next" 
 function selectAnswer(){
 	$('main').on('click', '.submit', function(event){
 		event.preventDefault();
-		let userAnswer = $('input:checked').val();
-		let correctAnswer = STORE[questionNumber].correctAnswer;
+		if ($('.checkAnswer').is(':checked')) {
+			let selected = $('input:checked');
+			let userAnswer = selected.val();
+			let correctAnswer = STORE[questionNumber].correctAnswer;
 
-		if (userAnswer === correctAnswer) {
-			ifAnswerIsCorrect();
-			console.log('You are correct!');
+
+			if (userAnswer === correctAnswer) {
+				ifAnswerIsCorrect();
+				console.log('You are correct!');
+			}
+			else {
+				ifAnswerIsIncorrect();
+				console.log('You are incorrect!');
+			}
 		}
 		else {
-			ifAnswerIsIncorrect();
-			console.log('You are incorrect!');
+			alert("Please select an answer.");
 		}
 	});
 
 }
 
-//function respobsible for updating the displayed score text
+
+//function responsible for updating the displayed score text
 function upDateScoreText(){
 	changeScore();
 	$('.score').text(score);
@@ -138,8 +148,7 @@ function renderResults(){
 }
 
 function removeCounter(){
-	$('.right-corner').remove();
-	console.log('remove counter ran!');
+	$('.score-question-counter').remove();
 }
 
 function startQuizOver(){
